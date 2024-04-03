@@ -1,0 +1,28 @@
+<div class="login">
+  <div class="login__wrapper">
+    <h1 class="login__title">{{loginTitle}}</h1>
+
+    <form [formGroup]="loginForm" class="login__wrapper">
+      <div class="login__field login__field-email">
+        <label class="login__label" for="user-email">Email:</label>
+        <input class="login__input" id="user-email"
+               type="email"
+               formControlName="email">
+      </div>
+
+      <div class="login__field login__field-password">
+        <label class="login__label" for="user-password">Password: </label>
+        <input class="login__input" id="user-password"
+               type="password"
+               formControlName="password">
+      </div>
+
+      <button class="login__button"
+              mat-flat-button
+              type="submit"
+              [disabled]="!loginForm.valid"
+              (click)="onSubmit()"
+              color="primary">Submit</button>
+    </form>
+  </div>
+</div>

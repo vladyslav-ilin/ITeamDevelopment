@@ -1,0 +1,14 @@
+<div class="dashboard">
+  <div class="dashboard__wrapper" *ngFor="let dashboard of dashboardList | async">
+    <app-cards *ngIf="dashboard.id"
+               [imageSrc]="dashboard.image_url"
+               (getGraphInfo)="getGraphInfo(dashboard.id)"
+               [userName]="dashboard.name">
+    </app-cards>
+
+    <app-modal [visible]="modalVisible"
+               (visibleChange)="modalVisible = $event"
+               title="{{graphTitle}}">
+    </app-modal>
+  </div>
+</div>

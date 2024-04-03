@@ -1,0 +1,17 @@
+<table class="table" *ngIf="(users | async) as userList">
+  <div class="table__wrapper" *ngIf="userList.length > 0;">
+    <tr class="table__colum">
+      <th *ngFor="let colum of columns">{{colum | titlecase}}</th>
+    </tr>
+
+    <tr *ngFor="let user of users | async">
+      <td>{{user.name}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.dateOfBirth}}</td>
+      <td>{{user.education}}</td>
+      <td>{{user.role}}</td>
+      <td>{{user.position}}</td>
+    </tr>
+  </div>
+
+</table>
